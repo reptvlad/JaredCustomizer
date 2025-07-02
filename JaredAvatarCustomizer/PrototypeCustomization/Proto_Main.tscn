@@ -1,0 +1,424 @@
+[gd_scene load_steps=30 format=3 uid="uid://bqtfjc6xroh3d"]
+
+[ext_resource type="Script" uid="uid://dvk7n8mlrawyh" path="res://PrototypeCustomization/proto_main.gd" id="1_kump8"]
+[ext_resource type="PackedScene" uid="uid://k1wtfjd15o0d" path="res://PrototypeCustomization/ProtoJared.tscn" id="2_rokst"]
+[ext_resource type="Texture2D" uid="uid://d1akd1s41yu45" path="res://PrototypeCustomization/Assets/Textures/cinnamon_placeholder.png" id="2_xlt33"]
+[ext_resource type="Texture2D" uid="uid://ciilnt25uuwc5" path="res://PrototypeCustomization/Assets/Textures/EyesOptions/A_EyeOpt1.tres" id="3_1xsjw"]
+[ext_resource type="Texture2D" uid="uid://duhcb346nkd71" path="res://PrototypeCustomization/Assets/Textures/EyesOptions/A_EyeOpt2.tres" id="4_thba2"]
+[ext_resource type="Texture2D" uid="uid://g3v3sgqhmjgk" path="res://PrototypeCustomization/Assets/Textures/EyesOptions/A_EyeOpt3.tres" id="5_vunmj"]
+[ext_resource type="Texture2D" uid="uid://dudgkpf58pkro" path="res://PrototypeCustomization/Assets/Textures/EyesOptions/A_EyeOpt4.tres" id="6_1h4pu"]
+[ext_resource type="Texture2D" uid="uid://68uy621e8ie7" path="res://PrototypeCustomization/Assets/Textures/MouthOptions/A_MouthOpt1.tres" id="8_rokst"]
+[ext_resource type="Texture2D" uid="uid://bncishaj38kpg" path="res://PrototypeCustomization/Assets/Textures/MouthOptions/A_MouthOpt2.tres" id="9_ddpje"]
+[ext_resource type="Texture2D" uid="uid://cabhavx7mko5p" path="res://PrototypeCustomization/Assets/Textures/MouthOptions/A_MouthOpt3.tres" id="10_e6qd3"]
+[ext_resource type="Texture2D" uid="uid://8ngrim1sgy37" path="res://PrototypeCustomization/Assets/Textures/MouthOptions/A_MouthOpt4.tres" id="11_oby2a"]
+[ext_resource type="Texture2D" uid="uid://cjrgl0relphpi" path="res://PrototypeCustomization/Assets/Textures/EarOptions/A_EarOpt1.tres" id="12_o806w"]
+[ext_resource type="Texture2D" uid="uid://d163aggc87pd6" path="res://PrototypeCustomization/Assets/Textures/EarOptions/A_EarOpt2.tres" id="13_mdwgg"]
+[ext_resource type="Texture2D" uid="uid://dmwgi3mbg54gt" path="res://PrototypeCustomization/Assets/Textures/EarOptions/A_EarOpt3.tres" id="14_7lcqx"]
+[ext_resource type="Texture2D" uid="uid://bstalvkwoire0" path="res://PrototypeCustomization/Assets/Textures/EarOptions/A_EarOpt4.tres" id="15_k1o8l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlt33"]
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rtk4t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtk4t"]
+albedo_color = Color(0.416917, 0.270839, 0.19762, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rtk4t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xlt33"]
+
+[sub_resource type="Sky" id="Sky_kump8"]
+sky_material = SubResource("ProceduralSkyMaterial_xlt33")
+
+[sub_resource type="Environment" id="Environment_qk3ck"]
+background_mode = 1
+background_color = Color(0.236187, 0.0443815, 0.39816, 1)
+sky = SubResource("Sky_kump8")
+ambient_light_source = 2
+ambient_light_color = Color(0.51979, 0.173065, 0.645005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk3ck"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kump8"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlt33"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri8fe"]
+albedo_color = Color(0.789816, 0.68967, 0.98398, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ri8fe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kump8"]
+albedo_color = Color(1, 0.08, 0.126, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_kump8"]
+material = SubResource("StandardMaterial3D_kump8")
+text = "PROTOTYPE
+NOTHING HERE IS FINAL"
+
+[node name="ProtoMain" type="Node3D"]
+script = ExtResource("1_kump8")
+
+[node name="Podium" type="Node3D" parent="."]
+transform = Transform3D(-0.123653, 0, -0.992325, 0, 1, 0, 0.992325, 0, -0.123653, -1.09063, 0, -1.71027)
+
+[node name="PodiumMesh" type="MeshInstance3D" parent="Podium"]
+transform = Transform3D(0.953972, 0, 0, 0, 0.04519, 0, 0, 0, 0.953972, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xlt33")
+mesh = SubResource("CylinderMesh_rtk4t")
+skeleton = NodePath("../../Scene/WallMesh")
+
+[node name="ProtoJared" parent="Podium" instance=ExtResource("2_rokst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0296607, 0)
+
+[node name="Scene" type="Node" parent="."]
+
+[node name="FloorMesh" type="MeshInstance3D" parent="Scene"]
+transform = Transform3D(7.242, 0, 0, 0, 1, 0, 0, 0, 6.0483, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_rtk4t")
+mesh = SubResource("PlaneMesh_rtk4t")
+skeleton = NodePath("../..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scene"]
+environment = SubResource("Environment_qk3ck")
+
+[node name="Camera3D" type="Camera3D" parent="Scene"]
+transform = Transform3D(0.950516, 0.0319352, -0.309031, 0, 0.994703, 0.102793, 0.310676, -0.0977059, 0.945481, -2.15065, 0.826443, -0.247863)
+current = true
+fov = 50.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Scene/Camera3D"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 728.0
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Scene/Camera3D/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ColorsMenu" type="PanelContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Colors"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Nose"
+
+[node name="NoseColorPicker" type="ColorPickerButton" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Nose color"
+color = Color(0.901961, 0.368627, 0.541176, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Body"
+
+[node name="BodyColorPicker" type="ColorPickerButton" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Nose color"
+color = Color(1, 0.937255, 0.960784, 1)
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Outline"
+
+[node name="OutlineColorPicker" type="ColorPickerButton" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Nose color"
+color = Color(0.65858, 0.2516, 0.68, 1)
+
+[node name="EyesOptionsMenu" type="PanelContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Eyes"
+
+[node name="GridContainer" type="GridContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 5.94
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Button" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EyeOptions"]]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("3_1xsjw")
+
+[node name="Button2" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EyeOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("4_thba2")
+
+[node name="Button3" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EyeOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("5_vunmj")
+
+[node name="Button4" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EyeOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("6_1h4pu")
+
+[node name="Button5" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("2_xlt33")
+
+[node name="Button6" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EyesOptionsMenu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("2_xlt33")
+
+[node name="MouthOptionsMenu" type="PanelContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Mouth "
+
+[node name="GridContainer" type="GridContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 5.94
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Button" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["MouthOptions"]]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("8_rokst")
+
+[node name="Button2" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["MouthOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("9_ddpje")
+
+[node name="Button3" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["MouthOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("10_e6qd3")
+
+[node name="Button4" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["MouthOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("11_oby2a")
+
+[node name="Button5" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("2_xlt33")
+
+[node name="Button6" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/MouthOptionsMenu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("2_xlt33")
+
+[node name="EarsOptionsMenu" type="PanelContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Ears"
+
+[node name="GridContainer" type="GridContainer" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 5.94
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Button" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EarOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("12_o806w")
+
+[node name="Button2" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EarOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("13_mdwgg")
+
+[node name="Button3" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EarOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("14_7lcqx")
+
+[node name="Button4" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer/GridContainer" groups=["EarOptions"]]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("15_k1o8l")
+
+[node name="Button5" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("2_xlt33")
+
+[node name="Button6" type="Button" parent="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/EarsOptionsMenu/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 120
+icon = ExtResource("2_xlt33")
+
+[node name="JaredRotationSlider" type="HSlider" parent="Scene/Camera3D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -808.0
+offset_top = -73.0
+offset_right = -56.0
+offset_bottom = -57.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/slider = SubResource("StyleBoxFlat_qk3ck")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_kump8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xlt33")
+min_value = -180.0
+max_value = 180.0
+scrollable = false
+
+[node name="Exit" type="Button" parent="Scene/Camera3D"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 19.0
+offset_right = -19.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Scene"]
+transform = Transform3D(0.872505, -0.298553, 0.386784, 1.86265e-08, 0.791608, 0.61103, -0.488606, -0.533126, 0.690681, 0.0338853, 2.10069, 0.13645)
+light_color = Color(0.881937, 0.881937, 0.881937, 1)
+light_energy = 5.781
+light_size = 0.506
+shadow_enabled = true
+shadow_bias = 0.209
+spot_range = 5.82208
+spot_attenuation = 1.19
+spot_angle = 64.5112
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Scene"]
+transform = Transform3D(0.728048, 0.364863, -0.580363, 0.00411582, 0.844253, 0.535929, 0.685514, -0.392571, 0.613155, -6.32213, 3.15464, 0.159706)
+light_color = Color(0.923843, 0.75568, 0.945957, 1)
+light_energy = 10.448
+spot_range = 4.9338
+spot_attenuation = 1.19
+spot_angle = 61.4277
+
+[node name="WallMesh" type="MeshInstance3D" parent="Scene"]
+transform = Transform3D(6.92248, 0, 0, 0, -4.37114e-08, -4.11147, 0, 1, -1.79718e-07, -0.434068, 3.93378, -4.31575)
+material_override = SubResource("StandardMaterial3D_ri8fe")
+mesh = SubResource("PlaneMesh_ri8fe")
+skeleton = NodePath("../..")
+
+[node name="WallMesh2" type="MeshInstance3D" parent="Scene"]
+transform = Transform3D(-3.02591e-07, -1, 1.79718e-07, 0, -4.37114e-08, -4.11147, 6.92248, -4.37114e-08, 2.24626e-14, 6.16372, 3.93378, 0.697112)
+material_override = SubResource("StandardMaterial3D_ri8fe")
+mesh = SubResource("PlaneMesh_ri8fe")
+skeleton = NodePath("../..")
+
+[node name="TextPrototype" type="MeshInstance3D" parent="Scene"]
+transform = Transform3D(0.788258, 0, -0.615345, 0, 1, 0, 0.615345, 0, 0.788258, -0.819423, 1.27524, -2.1661)
+mesh = SubResource("TextMesh_kump8")
+
+[connection signal="color_changed" from="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/NoseColorPicker" to="." method="_on_nose_color_picker_color_changed"]
+[connection signal="color_changed" from="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BodyColorPicker" to="." method="_on_body_color_picker_color_changed"]
+[connection signal="color_changed" from="Scene/Camera3D/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorsMenu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/OutlineColorPicker" to="." method="_on_outline_color_picker_color_changed"]
+[connection signal="value_changed" from="Scene/Camera3D/JaredRotationSlider" to="." method="_on_jared_rotation_slider_value_changed"]
+[connection signal="pressed" from="Scene/Camera3D/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://c0kydft440kce"
+path="res://.godot/imported/TA_EyesOptions.png-f63b6a600082c9a9f6365966aaf71a33.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://PrototypeCustomization/Assets/Textures/EyesOptions/TA_EyesOptions.png"
+dest_files=["res://.godot/imported/TA_EyesOptions.png-f63b6a600082c9a9f6365966aaf71a33.ctexarray"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=4
+slices/vertical=1

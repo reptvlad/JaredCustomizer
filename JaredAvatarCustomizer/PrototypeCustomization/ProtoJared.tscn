@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://k1wtfjd15o0d"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnkacjwqo4p6h" path="res://PrototypeCustomization/Assets/Models/EarOptions/EarOpt1.res" id="1_6wlt7"]
+[ext_resource type="ArrayMesh" uid="uid://dwiv03x27odab" path="res://PrototypeCustomization/Assets/Models/ProtoJared.res" id="2_w1vs0"]
+[ext_resource type="Shader" uid="uid://douss0jpdowia" path="res://PrototypeCustomization/Assets/Materials/VMat_ProtoJaredDetails.tres" id="3_lj0c7"]
+[ext_resource type="Texture2D" uid="uid://d3rbm515rdl5k" path="res://PrototypeCustomization/Assets/Textures/BaseColors_Mask.png" id="4_cmgsd"]
+[ext_resource type="CompressedTexture2DArray" uid="uid://c0kydft440kce" path="res://PrototypeCustomization/Assets/Textures/EyesOptions/TA_EyesOptions.png" id="5_5fxry"]
+[ext_resource type="CompressedTexture2DArray" uid="uid://ds2te1oyk4b0t" path="res://PrototypeCustomization/Assets/Textures/MouthOptions/TA_MouthOptions.png" id="6_nhopu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lj0c7"]
+cull_mode = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0.65858, 0.2516, 0.68, 1)
+grow = true
+grow_amount = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7s3jl"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_lj0c7")
+shader = ExtResource("3_lj0c7")
+shader_parameter/Texture2DParameter = ExtResource("4_cmgsd")
+shader_parameter/nose_color = Color(0.901961, 0.368627, 0.541176, 1)
+shader_parameter/body_color = Color(1, 0.937255, 0.960784, 1)
+shader_parameter/bite_color = Color(0.945098, 0.639216, 0.745098, 1)
+shader_parameter/eye_custom_option = 0
+shader_parameter/eyes_t2array = ExtResource("5_5fxry")
+shader_parameter/mouth_custom_option = 0
+shader_parameter/mouth_t2array = ExtResource("6_nhopu")
+
+[node name="ProtoJared" type="Node3D"]
+
+[node name="JaredEars" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = ExtResource("1_6wlt7")
+surface_material_override/0 = SubResource("ShaderMaterial_7s3jl")
+
+[node name="JaredBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = ExtResource("2_w1vs0")
+surface_material_override/0 = SubResource("ShaderMaterial_7s3jl")

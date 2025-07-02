@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://ds2te1oyk4b0t"
+path="res://.godot/imported/TA_MouthOptions.png-0fe740416e5444a10306c05e945fe123.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://PrototypeCustomization/Assets/Textures/MouthOptions/TA_MouthOptions.png"
+dest_files=["res://.godot/imported/TA_MouthOptions.png-0fe740416e5444a10306c05e945fe123.ctexarray"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=4
+slices/vertical=1
